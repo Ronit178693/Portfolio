@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import resumePdf from '../assets/Resume_Ronit.pdf'
 
 export default function Contact() {
   const [emailHover, setEmailHover] = useState(false)
@@ -87,10 +88,9 @@ export default function Contact() {
               justifyContent: 'center',
             }}>
               {[
-                { label: 'GITHUB', href: 'https://github.com/ronit-agrawal' },
-                { label: 'LINKEDIN', href: 'https://linkedin.com/in/ronit-agrawal' },
-                { label: 'TWITTER', href: '#' },
-                { label: 'RESUME', href: '/resume.pdf' },
+                { label: 'GITHUB', href: 'https://github.com/Ronit178693' },
+                { label: 'LINKEDIN', href: 'https://www.linkedin.com/in/ronit-agrawal-b99313308/' },
+                { label: 'RESUME', href: resumePdf },
               ].map(link => (
                 <a
                   key={link.label}

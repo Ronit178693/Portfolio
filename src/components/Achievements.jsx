@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import hackathonCert from '../assets/Ronit Agrawal.pdf'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -11,6 +12,7 @@ const achievements = [
     subtitle: 'University Level Smart India Hackathon',
     details: 'Rank 90 out of 400+ teams · Team CodeHand · Bennett University · Aug–Sept 2024',
     issuedBy: 'Ministry of Education, MoE Innovation Cell, AICTE, Bennett University',
+    verifyLink: hackathonCert,
   },
   {
     emoji: '🎓',
