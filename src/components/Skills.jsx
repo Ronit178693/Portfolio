@@ -11,23 +11,23 @@ const skillCategories = [
   },
   {
     title: 'Frontend',
-    skills: ['React.js', 'Vite', 'HTML5', 'CSS3', 'Bootstrap', 'Responsive Design'],
+    skills: ['React.js', 'Vite', 'HTML5', 'CSS3', 'Bootstrap'],
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'Mongoose', 'Cloudinary'],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication'],
   },
   {
     title: 'Databases',
-    skills: ['MongoDB Atlas', 'Mongoose', 'Aggregation Pipelines', 'SQL'],
+    skills: ['MongoDB Atlas', 'MongoDB Compass', 'Mongoose', 'Aggregation Pipelines', 'SQL'],
   },
   {
     title: 'AI / ML',
-    skills: ['Scikit-learn', 'Pandas', 'NumPy', 'Supervised & Unsupervised Learning', 'PCA', 'Feature Engineering'],
+    skills: ['Scikit-learn', 'Pandas', 'NumPy', 'PCA', 'Feature Engineering', 'Supervised & Unsupervised Learning'],
   },
   {
     title: 'Tools',
-    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Vercel', 'Render', 'npm'],
+    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Vercel', 'Render', 'Cloudinary', 'npm'],
   },
 ]
 

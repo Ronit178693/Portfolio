@@ -1,0 +1,42 @@
+RONIT AGRAWAL
+Phone+91-6396624377 Enveloperonitagrawal9921@gmail.com LINKEDINLinkedIn GithubGitHub Map-marker-altDelhi, India
+EDUCATION
+Bennett University Greater Noida, UP
+B.Tech in Computer Science and Engineering 2024 – 2028
+Achievement: Smart BU Hackathon — Ranked 90th out of 400+ teams
+PROJECTS
+Cravora — Campus Food & Parcel Delivery Platform GithubGitHub |Live
+Tech: React.js, Vite, Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, Cloudinary, Render, Vercel
+•Built a full-stack peer-to-peer delivery platform with3 user roles (Student, Outlet Owner, Runner), 15+ REST
+API endpoints , and real-time order tracking via polling
+•Secured authentication using httpOnly JWT cookies with bcrypt password hashing, role-based middleware, and
+OTP-based password reset with 5-minute expiry via SMTP email
+•Engineered a 6-state ﬁnite state machine for order lifecycle ( Pending →Accepted →Preparing →OutForDelivery
+→Delivered | Cancelled ) with server-side transition validation
+•Designed 4 MongoDB schemas with strategic denormalization — embedded menu subdocuments for atomic reads,
+point-in-time order snapshots, and Mongoose population for relational queries
+•Deployed frontend on Vercel and backend on Render with cross-origin cookie support, MongoDB Atlas for cloud
+database, Cloudinary image uploads, and production-grade CORS conﬁguration
+Ledgerly — Expense & Finance Tracker GithubGitHub
+Tech: React.js, Node.js, Express.js, MongoDB, Chart.js, JWT, REST APIs
+•Built a MERN-based ﬁnancial management system with real-time expense tracking and interactive analytics dash-
+board using Chart.js for spending pattern visualization
+•Optimized data aggregation performance using MongoDB Aggregation Pipelines for computing category-wise
+spending summaries and monthly trend analysis
+•Implemented secure authentication with JWT tokens stored in httpOnly cookies , input validation, and protected
+API routes with middleware-based access control
+Smart Sales — Customer Intelligence System GithubGitHub
+Tech: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+•Designed an end-to-end ML preprocessing pipeline with outlier detection, feature scaling, and encoding, reducing
+raw feature noise by 40% before model training
+•Applied PCA for dimensionality reduction, retaining 95% variance while reducing feature space, and performed
+K-Means clustering with Elbow + Silhouette validation for customer segmentation
+•Built a Logistic Regression classiﬁer with hyperparameter tuning via RandomizedSearchCV (5-fold CV) ,
+achieving robust generalization on unseen test data
+TECHNICAL SKILLS
+Languages: Python, C++, JavaScript, SQL
+Frontend: React.js, Vite, HTML5, CSS3, Bootstrap
+Backend: Node.js, Express.js, REST APIs, JWT Authentication
+Databases: MongoDB Atlas, MongoDB Compass, Mongoose, Aggregation Pipelines, SQL
+AI/ML: Scikit-learn, Pandas, NumPy, PCA, Feature Engineering, Supervised & Unsupervised Learning
+Tools: Git, GitHub, Postman, VS Code, Vercel, Render, Cloudinary, npm

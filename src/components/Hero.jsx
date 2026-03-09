@@ -17,10 +17,10 @@ export default function Hero() {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
-    camera.position.z = 3.5
+    camera.position.z = 4.2 // Pushed back further to avoid clipping on the right edge
 
-    // Larger icosahedron: 2.2 instead of 1.5
-    const geometry = new THREE.IcosahedronGeometry(2.2, 1)
+    // Slightly smaller radius to fit container nicely
+    const geometry = new THREE.IcosahedronGeometry(1.9, 1)
     const material = new THREE.MeshBasicMaterial({
       color: 0xE84C1E,
       wireframe: true,
@@ -28,17 +28,27 @@ export default function Hero() {
       opacity: 0.4,
     })
     const mesh = new THREE.Mesh(geometry, material)
-    scene.add(mesh)
+
+    // Group separates continuous rotation from mouse rotation
+    const group = new THREE.Group()
+    group.add(mesh)
+    scene.add(group)
 
     let animId
     const animate = () => {
       animId = requestAnimationFrame(animate)
+      // Continuous rotation applied to the mesh itself
       mesh.rotation.y += 0.004
       mesh.rotation.x += 0.002
 
       const width = canvas.clientWidth
       const height = canvas.clientHeight
-      if (canvas.width !== width || canvas.height !== height) {
+      const pixelRatio = window.devicePixelRatio
+
+      // Calculate properly considering devicePixelRatio to stop infinite resize loops
+      const needResize = canvas.width !== Math.floor(width * pixelRatio) || canvas.height !== Math.floor(height * pixelRatio)
+
+      if (needResize) {
         renderer.setSize(width, height, false)
         camera.aspect = width / height
         camera.updateProjectionMatrix()
@@ -48,16 +58,19 @@ export default function Hero() {
     }
     animate()
 
-    // Mouse tracking for mesh
+    // Create optimized GSAP trackers for performance
+    const rotateXTo = gsap.quickTo(group.rotation, 'x', { duration: 2, ease: 'power2.out' })
+    const rotateYTo = gsap.quickTo(group.rotation, 'y', { duration: 2, ease: 'power2.out' })
+
+    // Mouse tracking localized to the hero canvas container bounds
     const onMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth) - 0.5
-      const y = (e.clientY / window.innerHeight) - 0.5
-      gsap.to(mesh.rotation, {
-        y: x * 2,
-        x: y * 2,
-        duration: 2,
-        ease: 'power2.out',
-      })
+      const rect = canvas.getBoundingClientRect()
+      // Normalize mouse coordinates relative to the canvas
+      const x = ((e.clientX - rect.left) / rect.width) - 0.5
+      const y = ((e.clientY - rect.top) / rect.height) - 0.5
+
+      rotateYTo(x * 2)
+      rotateXTo(y * 2)
     }
     window.addEventListener('mousemove', onMouseMove)
 

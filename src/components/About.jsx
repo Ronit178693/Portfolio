@@ -1,3 +1,5 @@
+import aboutImage from '../assets/Gemini_Generated_Image_r8a19zr8a19zr8a1.png'
+
 export default function About() {
   return (
     <section id="about" style={{
@@ -17,7 +19,7 @@ export default function About() {
           <div style={{ position: 'relative' }}>
             <img
               alt="Ronit Agrawal"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6SerWMLza1xcwiShp65zf7RNUttbYkheggeeUo9h0_XknC_8usBtg9uPXpuhf5InJOEccXxTdTte8RTGHqiiMou6t17wjWmodTPJMp-ywWHHJndfK3AG7MKGtPSj8uK9AZiNlWZ2fsPe3rXJQP7HyPNwdH-0iEXy_4JiUPfx1Jw9Nx9qFXuXh9ilXd0is9SjfXOsjxf6DMa_tE4IyEJJGMeYSEgWLvc5qkmJHz5B0SMHBmnG9l5wb3_cq_bLWVtYyrNnifHxSM9Yh"
+              src={aboutImage}
               style={{
                 borderRadius: 'var(--radius-eight)',
                 filter: 'grayscale(100%)',
@@ -42,7 +44,7 @@ export default function About() {
                 lineHeight: 1.2,
                 color: 'white',
               }}>
-                "I'm a <br />Second-year <br />who ships."
+                "I'm a <br />B.Tech Student <br />who ships."
               </p>
             </div>
           </div>
@@ -71,10 +73,13 @@ export default function About() {
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24, fontSize: '1.15rem', fontWeight: 300, opacity: 0.9, lineHeight: 1.7 }}>
             <p>
-              Based in the intersection of design and data, I build digital experiences that are as performant as they are beautiful.
+              I am a Computer Science student at <strong>Bennett University</strong> with a drive to architect software that solves real-world problems. My engineering approach sits at the intersection of scale and intelligence—blending robust full-stack systems with data-driven machine learning models.
             </p>
             <p>
-              I'm currently a first-year student obsessed with the potential of Generative AI and distributed systems. When I'm not coding, you'll find me exploring abstract architecture or pushing pixels.
+              Whether I'm engineering complex peer-to-peer delivery platforms like <em>Cravora</em>, building interactive expense trackers like <em>Ledgerly</em>, or optimizing predictive customer intelligence with scikit-learn, my focus is always on delivering performant, production-ready code. I thrive on architecting RESTful APIs, designing optimized aggregation pipelines, and deploying cross-origin cloud architectures.
+            </p>
+            <p>
+              Beyond the code editor, I actively participate in competitive programming and hackathons, proudly securing a top 90 rank out of 400+ teams at the Smart BU Hackathon. I am deeply obsessed with the potential of Generative AI, distributed networks, and pushing the boundaries of what modern web applications and data pipelines can achieve.
             </p>
             <p style={{
               fontFamily: 'var(--font-mono)',

@@ -11,8 +11,7 @@ const projects = [
     description: 'A premium food discovery and delivery marketplace. Built with a focus on seamless user experience and real-time order tracking systems.',
     tags: ['React', 'Node.js', 'MongoDB', 'Redux'],
     liveUrl: 'https://cravora-chi.vercel.app/',
-    // Original Stitch design image as banner
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7JXEbN2xbf4SfFmsp_3uAZVuMhu8TEpLbvWnLEZfnrG4um1DNZC_cVI4jKaxSI91bG7qbJBuHxpn6MB2nPy0H8_0mSQ3uPmWQUq4LoU-CHo5TpgJUDSgBZmOD1ed5rNYxtYxdjQpI_iPiquzOI0qsLP4mGAiKrT_9j78D3Po_VeZmPwjmWqUXOeUBSt-ADM92tG2y-nAstYGsoS_DawpXCNYj41bN4D1Zplhoh1j7KLFIF_44AjQDu3YqJZcuxriJuSI-vEPR3xfm',
+    image: '/stitch-cravora-banner.png',
     reversed: false,
   },
   {
@@ -61,19 +60,21 @@ function ProjectCard({ project }) {
       )
     })
 
-    // 3D tilt on image banner
+    // 3D tilt on image banner — increased rotation and adding scale
     const onMouseMove = (e) => {
       const rect = inner.getBoundingClientRect()
       const x = e.clientX - rect.left
       const y = e.clientY - rect.top
       const centerX = rect.width / 2
       const centerY = rect.height / 2
-      const rotateX = (y - centerY) / 25
-      const rotateY = (centerX - x) / 25
+      // Dividing by a smaller number (15 instead of 25) means a steeper tilt
+      const rotateX = (y - centerY) / 15
+      const rotateY = (centerX - x) / 15
 
       gsap.to(inner, {
         rotateX,
         rotateY,
+        scale: 1.03, // Slight scale up when hovering inside
         duration: 0.5,
         ease: 'power2.out',
       })
@@ -83,6 +84,7 @@ function ProjectCard({ project }) {
       gsap.to(inner, {
         rotateX: 0,
         rotateY: 0,
+        scale: 1, // Reset scale
         duration: 1,
         ease: 'elastic.out(1, 0.3)',
       })
@@ -133,40 +135,6 @@ function ProjectCard({ project }) {
           e.target.style.filter = 'grayscale(30%)'
         }}
       />
-      {/* Hover overlay */}
-      {project.liveUrl && (
-        <div
-          className="banner-overlay"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(232, 76, 30, 0)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.4s',
-            pointerEvents: 'none',
-          }}
-        >
-          <span
-            className="visit-label"
-            style={{
-              fontFamily: 'var(--font-syne)',
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              color: 'white',
-              opacity: 0,
-              transform: 'translateY(10px)',
-              transition: 'all 0.4s',
-              padding: '12px 28px',
-              border: '2px solid white',
-              borderRadius: 'var(--radius-eight)',
-            }}
-          >
-            Visit Live Site →
-          </span>
-        </div>
-      )}
     </div>
   )
 
@@ -302,13 +270,6 @@ export default function Projects() {
       </div>
 
       <style>{`
-        .project-card:hover .banner-overlay {
-          background: rgba(232, 76, 30, 0.85) !important;
-        }
-        .project-card:hover .visit-label {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
         .card-inner:hover {
           box-shadow: 0 16px 48px rgba(232, 76, 30, 0.15) !important;
         }
