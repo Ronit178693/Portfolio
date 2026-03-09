@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import resumePdf from '../assets/Resume_Ronit.pdf'
 
 export default function Navbar() {
   const navRef = useRef(null)
@@ -59,6 +60,24 @@ export default function Navbar() {
           alignItems: 'center',
           gap: 48,
         }}>
+          <a
+            href={resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.8rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.12em',
+              color: 'var(--paper)',
+              textDecoration: 'none',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => e.target.style.color = 'var(--brand)'}
+            onMouseLeave={(e) => e.target.style.color = 'var(--paper)'}
+          >
+            Resume
+          </a>
           {['Work', 'Skills', 'About', 'Contact'].map(link => (
             <a
               key={link}

@@ -42,7 +42,7 @@ export default function About() {
                 lineHeight: 1.2,
                 color: 'white',
               }}>
-                "I'm a <br />first-year <br />who ships."
+                "I'm a <br />Second-year <br />who ships."
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function About() {
               paddingTop: 16,
               fontWeight: 400,
             }}>
-              Currently: Open for 2024 Internships.
+              Currently: Open for 2026 Internships.
             </p>
           </div>
         </div>
